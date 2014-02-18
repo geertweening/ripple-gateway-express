@@ -14,12 +14,12 @@ Authentication is provided
 
 ### Usage
 
-    var express = require('ripple-gateway-express');
+    var express = require('express');
+    var ExpressGateway = require('ripple-gateway-express');
 
-    var app = express();
+    gatewayExpress = new ExpressGateway(express());
 
-
-    http.createServer(app);
+    http.createServer(gatewayExpress);
   
 ### Authentication
 

@@ -16,8 +16,12 @@ Authentication is provided
 
     var express = require('express');
     var ExpressGateway = require('ripple-gateway-express');
+    var TestAdapter = require('ripple-gateway-data').TestAdapter;
 
-    gatewayExpress = new ExpressGateway(express());
+    var gatewayApi = new TestAdapter();
+
+    // bind the express server routes to the Gateway API backend
+    gatewayExpress = new ExpressGateway(express(), gatewayApi);
 
     http.createServer(gatewayExpress);
   

@@ -4,12 +4,13 @@ var sinon = require('sinon');
 var assert = require('assert');
 var passport = require('../lib/passport.js');
 var controllers = require('../lib/controllers/index.js');
+var Adapter = require('ripple-gateway-data-sequelize-adapter');
 
 describe('Ripple Gateway Express', function(){
 
   before(function(fn){
     app = express();
-    adapter = {};
+    adapter = new Adapter();
     fn();
   });
 

@@ -34,7 +34,7 @@ describe("external accounts controller", function(){
     fn();
   });
   it("should update an external account", function(fn) {
-    adapter.updateExternalAccounts = sinon.spy();
+    adapter.updateExternalAccount = sinon.spy();
     controllers.external_accounts.update(req, res);
     assert(adapter.updateExternalAccount.called);
     fn();

@@ -61,14 +61,14 @@ describe('Ripple Gateway Express', function(){
       });       
     });
     describe('users', function(){
-      it('GET /v1/users should call the users index action', function(){
-        assert(app.post.calledWith('/api/v1/users'));
-      });       
-      it('GET /v1/users/:id should call the users show action', function(){
-        assert(app.post.calledWith('/api/v1/users/:id'));
-      });       
       it('POST /v1/users should call the users create action', function(){
         assert(app.post.calledWith('/api/v1/users'));
+      });       
+      it('GET /v1/users should call the users index action', function(){
+        assert(app.get.calledWith('/api/v1/users'));
+      });       
+      it('GET /v1/users/:id should call the users show action', function(){
+        assert(app.get.calledWith('/api/v1/users/:id'));
       });       
       it('PUT /v1/users/:id should call the users update action', function(){
         assert(app.put.calledWith('/api/v1/users/:id'));

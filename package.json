@@ -1,15 +1,19 @@
 {
   "name": "ripple-gateway-express",
   "version": "0.4.1",
-  "scripts": { "test": "mocha test/" },    
+  "scripts": {
+    "test": "mocha test/"
+  },
   "main": "./lib/index.js",
-  "dependencies" : {
+  "dependencies": {
     "express": "3.x",
     "express-validator": "",
-    "passport":"",
-    "passport-local":"",
-    "require-all":"",
-    "ripple-gateway-data-sequelize-adapter": "0.2.1"
+    "passport": "",
+    "passport-local": "",
+    "require-all": "",
+    "ripple-gateway-data-sequelize-adapter": "0.2.1",
+    "ripple-wallet": "",
+    "async": ""
   },
   "devDependencies": {
     "mocha": "~1.14.0",

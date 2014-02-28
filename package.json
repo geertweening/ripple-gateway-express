@@ -1,6 +1,6 @@
 {
   "name": "ripple-gateway-express",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "scripts": {
     "test": "mocha test/"
   },
@@ -11,7 +11,7 @@
     "passport": "",
     "passport-local": "",
     "require-all": "",
-    "ripple-gateway-data-sequelize-adapter": "0.2.1",
+    "ripple-gateway-data-sequelize-adapter": "0.2.4",
     "ripple-wallet": "",
     "async": ""
   },

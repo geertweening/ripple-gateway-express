@@ -1,7 +1,7 @@
 var assert = require('assert');
 var sinon = require('sinon');
 var adapter = require('../../lib/adapter.js');
-var controllers = require('../../lib/controllers/index.js');
+var controllers = require('../../lib/controllers/index.js')(adapter);
 
 describe("ripple transactions controller", function(){
   before(function(){

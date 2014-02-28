@@ -11,7 +11,7 @@
     "passport": "",
     "passport-local": "",
     "require-all": "",
-    "ripple-gateway-data-sequelize-adapter": "0.2.4",
+    "ripple-gateway-data-sequelize-adapter": "0.4.0",
     "ripple-wallet": "",
     "async": ""
   },

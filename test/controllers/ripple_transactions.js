@@ -4,6 +4,9 @@ var adapter = require('../../lib/adapter.js');
 var controllers = require('../../lib/controllers/index.js')(adapter);
 
 describe("ripple transactions controller", function(){
+
+  adapter = adapter.rippleTransactions;
+
   before(function(){
     req = {
       body: {}  
@@ -13,33 +16,33 @@ describe("ripple transactions controller", function(){
     };
   });
   it("should create a ripple transaction", function(fn) {
-    adapter.createRippleTransaction = sinon.spy();
+    adapter.create = sinon.spy();
     controllers.ripple_transactions.create(req, res);
-    assert(adapter.createRippleTransaction.called);
+    assert(adapter.create.called);
     fn();
   });
   it("should get a ripple transaction", function(fn) {
-    adapter.getRippleTransaction = sinon.spy();
+    adapter.read = sinon.spy();
     controllers.ripple_transactions.show(req, res);
-    assert(adapter.getRippleTransaction.called);
+    assert(adapter.read.called);
     fn();
   });
   it("should get many ripple transactions", function(fn) {
-    adapter.getRippleTransactions = sinon.spy();
+    adapter.readAll = sinon.spy();
     controllers.ripple_transactions.index(req, res);
-    assert(adapter.getRippleTransactions.called);
+    assert(adapter.readAll.called);
     fn();
   });
   it("should update a ripple transaction", function(fn) {
-    adapter.updateRippleTransaction = sinon.spy();
+    adapter.update = sinon.spy();
     controllers.ripple_transactions.update(req, res);
-    assert(adapter.updateRippleTransaction.called);
+    assert(adapter.update.called);
     fn();
   });
   it("should delete a ripple transaction", function(fn) {
-    adapter.deleteRippleTransaction = sinon.spy();
+    adapter.delete = sinon.spy();
     controllers.ripple_transactions.delete(req, res);
-    assert(adapter.deleteRippleTransaction.called);
+    assert(adapter.delete.called);
     fn();
   });
 });

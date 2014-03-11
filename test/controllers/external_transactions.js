@@ -4,6 +4,9 @@ var adapter = require('../../lib/adapter.js');
 var controllers = require('../../lib/controllers/index.js')(adapter);
 
 describe("external transactions controller", function(){
+
+  adapter = adapter.externalTransactions;
+
   before(function(){
     req = {
       body: {}  
@@ -13,33 +16,33 @@ describe("external transactions controller", function(){
     };
   });
   it("should create an external transaction", function(fn) {
-    adapter.createExternalTransaction = sinon.spy();
+    adapter.create = sinon.spy();
     controllers.external_transactions.create(req, res);
-    assert(adapter.createExternalTransaction.called);
+    assert(adapter.create.called);
     fn();
   });
   it("should get an external transaction", function(fn) {
-    adapter.getExternalTransaction = sinon.spy();
+    adapter.read = sinon.spy();
     controllers.external_transactions.show(req, res);
-    assert(adapter.getExternalTransaction.called);
+    assert(adapter.read.called);
     fn();
   });
   it("should get many external transactions", function(fn) {
-    adapter.getExternalTransactions = sinon.spy();
+    adapter.readAll = sinon.spy();
     controllers.external_transactions.index(req, res);
-    assert(adapter.getExternalTransactions.called);
+    assert(adapter.readAll.called);
     fn();
   });
   it("should update an external transaction", function(fn) {
-    adapter.updateExternalTransaction = sinon.spy();
+    adapter.update = sinon.spy();
     controllers.external_transactions.update(req, res);
-    assert(adapter.updateExternalTransaction.called);
+    assert(adapter.update.called);
     fn();
   });
   it("should delete an external transaction", function(fn) {
-    adapter.deleteExternalTransaction = sinon.spy();
+    adapter.delete = sinon.spy();
     controllers.external_transactions.delete(req, res);
-    assert(adapter.deleteExternalTransaction.called);
+    assert(adapter.delete.called);
     fn();
   });
 });

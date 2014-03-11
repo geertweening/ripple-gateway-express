@@ -4,6 +4,9 @@ var adapter = require('../../lib/adapter.js');
 var controllers = require('../../lib/controllers/index.js')(adapter);
 
 describe("ripple addresss controller", function(){
+
+  adapter = adapter.rippleAddresses;
+
   before(function(){
     req = {
       body: {}  
@@ -13,33 +16,33 @@ describe("ripple addresss controller", function(){
     };
   });
   it("should create a ripple address", function(fn) {
-    adapter.createRippleAddress = sinon.spy();
+    adapter.create = sinon.spy();
     controllers.ripple_addresses.create(req, res);
-    assert(adapter.createRippleAddress.called);
+    assert(adapter.create.called);
     fn();
   });
   it("should get a ripple address", function(fn) {
-    adapter.getRippleAddress = sinon.spy();
+    adapter.read = sinon.spy();
     controllers.ripple_addresses.show(req, res);
-    assert(adapter.getRippleAddress.called);
+    assert(adapter.read.called);
     fn();
   });
-  it("should get many ripple addresss", function(fn) {
-    adapter.getRippleAddresses = sinon.spy();
+  it.skip("should get many ripple addresss", function(fn) {
+    adapter.readAll = sinon.spy();
     controllers.ripple_addresses.index(req, res);
-    assert(adapter.getRippleAddresses.called);
+    assert(adapter.readAll.called);
     fn();
   });
   it("should update a ripple address", function(fn) {
-    adapter.updateRippleAddress = sinon.spy();
+    adapter.update = sinon.spy();
     controllers.ripple_addresses.update(req, res);
-    assert(adapter.updateRippleAddress.called);
+    assert(adapter.update.called);
     fn();
   });
   it("should delete a ripple address", function(fn) {
-    adapter.deleteRippleAddress = sinon.spy();
+    adapter.delete = sinon.spy();
     controllers.ripple_addresses.delete(req, res);
-    assert(adapter.deleteRippleAddress.called);
+    assert(adapter.delete.called);
     fn();
   });
 });
